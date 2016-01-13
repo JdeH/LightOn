@@ -1,0 +1,4792 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\sloppy
+
+\newref{lst}{
+name   = listing~,
+names  = listing~,
+Name   = Listing~,
+Names  = Listings~,
+rngtxt = {~to~},
+lsttxt = {an }
+}
+
+\newref{sec}{
+    name      = section~,  
+    names     = sections~,
+    Name      = Section~,
+    Names     = Section~!,
+    rngtxt    = {~to~},   
+    lsttxt    = {an}
+}
+
+\usepackage[font={footnotesize,bf}]{caption}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter beramono
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\listings_params "basewidth={0.5em},basicstyle={\ttfamily\small},captionpos=b,numbers=left"
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Light on Python
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Objects
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+This course is for the adventurous:
+\end_layout
+
+\begin_layout Itemize
+You'll learn Python the way a child would, even if you are an adult.
+ Children are experts in learning.
+ They learn by doing, and pick up words along the way.
+ In this text the same approach is followed.
+ 
+\noun on
+Not everything is defined or even explained.
+ Just try to find out how the example code works by guessing and experimenting.
+ 
+\noun default
+The steps taken may seem large and sometimes arbitrary
+\noun on
+.
+ 
+\noun default
+It's a bit like being dropped into the jungle without a survival course.
+ But don't worry, computer programming isn't nearly as dangerous.
+ And the steps taken in fact follow a carefully planned path.
+ Regularly try to put together something yourself.
+ Play with it.
+ Evolution has selected playing as the preferred way of learning.
+ I will not claim to improve on that.
+\end_layout
+
+\begin_layout Itemize
+You'll be addressed like an adult, even if you are a child.
+ Simple things will be explained simple, but the complexity of complex things
+ will not avoided.
+ The right, professional terminology will be used.
+ If you don't know a word, like 
+\begin_inset Quotes eld
+\end_inset
+
+terminology
+\begin_inset Quotes erd
+\end_inset
+
+, Google for it.
+ Having a separate child's world populated by comic figures, Santa Claus
+ and storks bringing babies is a recent notion.
+ Before all that, it was quite normal to have twelve year old geniuses.
+ But don't worry, programming can be pure fun, both for children and adults.
+\end_layout
+
+\begin_layout Itemize
+You'll focus upon a very effective way of using Python right from the start.
+ It is called object oriented programming.
+ And you'll learn some functional programming as well.
+ Don't bother what these words mean.
+ It'll become clear underway.
+ Mixing two ways of programming is no greater problem than children being
+ brought up with two or more languages: no problem at all.
+ By the way, those children have markedly healthier brains once they get
+ older.
+ There are also less important things to learn about Python.
+ You learn those gradually if you wish, while using Python.
+ Just stay curious and look things up on the Internet.
+\end_layout
+
+\begin_layout Standard
+I learned to program as a child, my father was programming the first computers
+ in the early 1950's.
+ We climbed through a window into the basement of the office building of
+ his employer, a multinational oil company.
+ Security was no issue back then.
+ Programming turned out to be fun indeed.
+ And it still is, for me!
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+TIP: Sections marked with *EXTRA * provide additional material if you like
+ to be challenged above the average or already have quite some Python experience.
+ You can become a good and productive Python programmer without ever touching
+ these sections.
+ The most important thing is that you start coding regularly.
+ Try e.g.
+ to write a simulation or a game and build that out gradually, regularly
+ pushing the limits of your Python knowledge a bit further.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Your first program
+\end_layout
+
+\begin_layout Standard
+Install Python 3.x.
+ The Getting Started topic on www.python.org will tell you how.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+IMPORTANT: Python 3.x rather than 2.x is indeed required to run all of the
+ examples correctly.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You will also need an editor.
+ If you're on Windows, Google for Notepad++.
+ If you're on Linux or Apple, you can use Gedit.
+ Then run the following program:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/sort.py"
+lstparams "captionpos=b,numbers=left,caption={prog/sort.py}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The pieces of text at the end of each line, starting with #, are comments.
+ Comments don't do anything, they just explain what's happening.
+ 
+\emph on
+'London'
+\emph default
+, 
+\emph on
+'Paris'
+\emph default
+, 
+\emph on
+'New York'
+\emph default
+ and 
+\emph on
+'Berlin'
+\emph default
+ are strings, pieces of text.
+ You can recognize such pieces of text by the quotes around them.
+ Programmers would say these four objects are instances of class string.
+ To clarify, a particular dog is an instance of class 
+\emph on
+Dog
+\emph default
+.
+ There may be classes for which there are no instances.
+ Class 
+\emph on
+Dinosaur
+\emph default
+ is such a class, since there are no (living) dinosaurs left.
+ So a class in itself is merely a description of a certain category of objects.
+\end_layout
+
+\begin_layout Standard
+Line 1 of the previous program is actually shorthand for line 1 of the following
+ program:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/sort2.py"
+lstparams "caption={prog/sort2.py}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So you construct objects of a certain class by using the name of that class,
+ followed by 
+\emph on
+()
+\emph default
+.
+ Inside this 
+\emph on
+()
+\emph default
+ there maybe things used in constructing the object.
+ In this case the object is of class 
+\emph on
+list
+\emph default
+, and there's a so called tuple of cities inside the 
+\emph on
+()
+\emph default
+.
+ Since the tuple itself is also enclosed in 
+\emph on
+()
+\emph default
+, you'll have 
+\emph on
+list ((...))
+\emph default
+, as can be seen in the source code.
+ For example 
+\emph on
+(1, 2, 3)
+\emph default
+ is a tuple of numbers, and 
+\emph on
+list ((1, 2, 3))
+\emph default
+ is a list constructed from this.
+ We could also have constructed this list with the shorthand notation 
+\emph on
+[1, 2, 3]
+\emph default
+, which means exactly the same thing as 
+\emph on
+list ((1, 2, 3)).
+
+\emph default
+ A tuple is an immutable group of objects.
+ So you could never sort a tuple itself.
+ But the list you construct from it is mutable, so you can sort it.
+\end_layout
+
+\begin_layout Standard
+Once it works, try to make small alterations and watch what happens.
+ Actually 
+\noun on
+do
+\noun default
+ this, it will speed up learning
+\end_layout
+
+\begin_layout Section
+Specifying your own classes
+\end_layout
+
+\begin_layout Standard
+Generally, in a computer program you work with many different classes of
+ objects: buttons and lists, images and texts, movies and music tracks,
+ aliens and spaceships, chessboards and pawns.
+\end_layout
+
+\begin_layout Standard
+So, looking at the 
+\begin_inset Quotes eld
+\end_inset
+
+real
+\begin_inset Quotes erd
+\end_inset
+
+ world: you are an instance of class 
+\emph on
+HumanBeing
+\emph default
+.
+ Your mother is also an instance of class 
+\emph on
+HumanBeing
+\emph default
+.
+ But the object under your table wagging its tail is an instance of class
+ 
+\emph on
+Dog
+\emph default
+.
+ Objects can do things, often with other objects.
+ You're mother and you can walk the dog.
+ And your dog can bark, as dogs do.
+\end_layout
+
+\begin_layout Standard
+Lets create a 
+\emph on
+Dog
+\emph default
+ class in Python, and then have some actual objects (dogs) of this class
+ (species):
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/dog.py"
+lstparams "caption={/prog/dog.py}"
+
+\end_inset
+
+Now lets allow different dogs to bark differently by adding a constructor
+ that puts a particular sound in a particular dog when it's instantiated
+ (born), and then instantiate your neighbours dog as well:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/neighbours_dog.py"
+lstparams "caption={/prog/neighbours\\_dog.py}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+After running this program and again experimenting with small alterations,
+ lets expand it further.
+ You and your mother will walk your dog and the neighbours dog:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/walking_the_dogs.py"
+lstparams "caption={prog/walking\\_the\\_dogs}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Run the above program and make sure you understand every step of it.
+ Add some print statements printing numbers, to find out in which order
+ it's executed.
+ Adding such print statements is a simple and effective method to 
+\emph on
+debug
+\emph default
+ a program (find out where it goes wrong).
+\end_layout
+
+\begin_layout Standard
+In the last example the 
+\emph on
+walk
+\emph default
+ method, defined on line 2, receives two parameters (lumps of data) to do
+ its job: 
+\emph on
+self 
+\emph default
+and 
+\emph on
+dog.
+ 
+\emph default
+It then calls (activates) the 
+\emph on
+escape
+\emph default
+ method of that particular dog: 
+\emph on
+dog.escape ()
+\emph default
+.
+ Lets follow program execution from line 24: 
+\emph on
+you.walk (your_dog)
+\emph default
+.
+ This results in calling the 
+\emph on
+walk
+\emph default
+ method defined on line 2, with parameter 
+\emph on
+self
+\emph default
+ referring to object 
+\emph on
+you
+\emph default
+ and parameter 
+\emph on
+dog
+\emph default
+ referring to object 
+\emph on
+your_dog
+\emph default
+.
+ The object 
+\emph on
+you 
+\emph default
+before the dot in 
+\emph on
+you.walk (your_dog)
+\emph default
+ is passed to the 
+\emph on
+walk
+\emph default
+ method as the first parameter, called 
+\emph on
+self
+\emph default
+, and 
+\emph on
+your_dog
+\emph default
+ is passed to the 
+\emph on
+walk 
+\emph default
+method as the second parameter, 
+\emph on
+dog
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Parameters
+\emph default
+ used in calling a method, like 
+\emph on
+you
+\emph default
+ and 
+\emph on
+your_dog
+\emph default
+ in line 24 are called 
+\emph on
+actual parameters
+\emph default
+.
+ Parameters that are used in defining a method, like 
+\emph on
+self
+\emph default
+ and 
+\emph on
+dog
+\emph default
+ in line 2 are called 
+\emph on
+formal parameters
+\emph default
+.
+ The use of formal parameters is necessary since you cannot predict what
+ the names of the actual parameters will be.
+ In the statement 
+\emph on
+mother.walk (neighbours_dog)
+\emph default
+ on line 25, different actual parameters, 
+\emph on
+mother 
+\emph default
+and 
+\emph on
+neighbour_dog
+\emph default
+, will be substituted for the same formal parameters, 
+\emph on
+self
+\emph default
+ and 
+\emph on
+dog
+\emph default
+.
+ Passing parameters to a method is a general way to transfer information
+ to that method.
+\end_layout
+
+\begin_layout Section
+Indentation, capitals and the use of _
+\end_layout
+
+\begin_layout Standard
+As can be seen from the listings, indentation is used to tell Python that
+ something is a part of something else, e.g.
+ that methods are part of a class, or that statements are part of a method.
+ You have to be concise here.
+ Most Python programmers indent with multiples of 4 spaces.
+ For my own non-educational programs I prefer tabs.
+\end_layout
+
+\begin_layout Standard
+Python is case-sensitive: uppercase and lowercase letters are considered
+ distinct.
+ When you specify your own classes, it is common practice to start them
+ with a capital letter and use capitals on word boundaries: 
+\emph on
+HumanBeing
+\emph default
+.
+ For objects, their attributes (which are also objects) and their methods,
+ in Python it is common to start with a lowercase letter and use _ on word
+ boundaries: 
+\emph on
+bark,
+\emph default
+ 
+\emph on
+your_dog.
+\end_layout
+
+\begin_layout Standard
+Constructors, the special methods that are used to initialize objects (give
+ them their start values), are always named 
+\emph on
+__init__
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+There's a recommendation about how to stylize your Python source code, it's
+ called PEP 0008 and its widely followed.
+ But it is strictly Python and I am mostly using a mix of Python and C++.
+ Since many C++ libraries have different naming conventions, I don't usually
+ follow these rules.
+ If you want to learn a style that is consistent over multiple programming
+ languages, use capitals on word boundaries for objects, atributes and methods
+ as well instead of _, but always start them with a lowercase letter.
+ Only class names start with an uppercase letter.
+ By the way 
+\emph on
+WritingClassNamesLikeThis
+\emph default
+ or 
+\emph on
+writingAllOtherNamesLikeThis
+\emph default
+ is called camel case, while
+\emph on
+ writing_all_other_names_like_this
+\emph default
+ is called pothole case.
+ You'll find examples of both the camel case and the potholse case style
+ in this course.
+\end_layout
+
+\begin_layout Chapter
+Encapsulation
+\end_layout
+
+\begin_layout Section
+Interfaces
+\end_layout
+
+\begin_layout Standard
+All objects of a certain class have the same attributes, but with distinct
+ values, e.g.
+ all objects of class 
+\emph on
+Dog
+\emph default
+ have the attribute 
+\emph on
+self.sound
+\emph default
+.
+ And all objects of a certain class have the same methods.
+ For our class 
+\emph on
+Dog
+\emph default
+ in the last example, those are the methods 
+\emph on
+__init__
+\emph default
+, 
+\emph on
+bark
+\emph default
+ and 
+\emph on
+escape
+\emph default
+.
+ Objects can have dozens or even hundreds of attributes and methods.
+ In line 4 of the previous example, method 
+\emph on
+walk
+\emph default
+ of a particular instance of class
+\emph on
+\noun on
+ 
+\noun default
+HumanBeing,
+\emph default
+ referred to as 
+\emph on
+self
+\emph default
+, calls method 
+\emph on
+escape
+\emph default
+ of a particular instance of class 
+\emph on
+Dog
+\emph default
+, referred to as 
+\emph on
+dog
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+So in the example 
+\emph on
+you.walk
+\emph default
+ calls 
+\emph on
+your_dog.escape 
+\emph default
+and 
+\emph on
+mother.walk
+\emph default
+ calls 
+\emph on
+neighbours_dog.escape
+\emph default
+.
+ Verify this by reading through the code step by step, and make sure not
+ to proceed until you fully and thoroughly understand this.
+\end_layout
+
+\begin_layout Standard
+In general any object can call any method of any other object.
+ And it also can access any attribute of any other object.
+ So objects are highly dependent upon each other.
+ That may become a problem.
+ Suppose change your program, e.g.
+ by renaming a method.
+ Then all other objects that used to call this method by its old name will
+ not work anymore.
+ And changing a name is just simple.
+ You may also remove formal parameters, change their meaning, or remove
+ a method altogether.
+ In general, in a changing world, you may change your design.
+ As your program grows bigger and bigger, the impact of changing anything
+ becomes disastrous.
+\end_layout
+
+\begin_layout Standard
+To limit the impact of changing a design, standardization is the answer.
+ Suppose we have two subclasses of 
+\emph on
+HumanBeing
+\emph default
+: 
+\emph on
+NatureLover
+\emph default
+ and 
+\emph on
+CouchPotato
+\emph default
+.
+ Objects of class 
+\emph on
+NatureLover
+\emph default
+ go out with their dogs to enjoy a walk.
+ Objects of class 
+\emph on
+CouchPotato
+\emph default
+ just deliberately let the dog escape at the doorstep, that it might walk
+ itself while they're watching their favorite soap.
+ While they both have a 
+\emph on
+walk 
+\emph default
+method, walking the dog means something quite different to either of them.
+ A programmer would say that their interface is standard (
+\emph on
+walk
+\emph default
+), but their implementation is different (calling 
+\emph on
+dog.follow_me
+\emph default
+ versus calling 
+\emph on
+dog.escape
+\emph default
+).
+ Let's see this in code:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/nature_potato.py"
+lstparams "caption={prog/nature\\_potato.py},label={lst:nature_potato}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There's a bit more to this example program.
+ Instances of class 
+\emph on
+Dog
+\emph default
+ are meant to be creatable anywhere in the code, in which case constructor
+ 
+\emph on
+__init__
+\emph default
+ will be called.
+ And their 
+\emph on
+follow_me
+\emph default
+ and 
+\emph on
+escape
+\emph default
+ methods are meant to be callable anywhere in the code as well.
+ In other words, the 
+\emph on
+__init__
+\emph default
+, 
+\emph on
+follow_me
+\emph default
+ and 
+\emph on
+escape
+\emph default
+ methods constitute the interface of class 
+\emph on
+Dog
+\emph default
+, meant for public use.
+ And then there's the 
+\emph on
+_bark
+\emph default
+ method.
+ As you can see it starts with 
+\emph on
+_
+\emph default
+.
+ By starting a method with a single 
+\emph on
+_
+\emph default
+, Python programmers indicate that this method does not belong to the interface
+ of the class, but is only meant for private use.
+ In this case, 
+\emph on
+_bark
+\emph default
+ is only called by methods 
+\emph on
+follow_me
+\emph default
+ and 
+\emph on
+escape
+\emph default
+ of the 
+\emph on
+Dog
+\emph default
+ class itself.
+ What exactly constitutes private use and what doesn't will be worked out
+ further after explanation of Python's module concept.
+\end_layout
+
+\begin_layout Standard
+It is also possible to prepend a 
+\emph on
+_ 
+\emph default
+to an attribute name, to indicate that this attribute is not part of the
+ interface.
+ But this is rarely done, since many programmers feel that attributes shouldn't
+ be part of the interface anyhow.
+ While there's certainly some sense in that, it is not a general truth.
+ One should always be open to picking the best solution at hand, which sometimes
+ means deviating from textbook wisdom or common practice.
+ Of course following common practice has some advantages of its own, and
+ when working in a team, the best solution may be a standard solution.
+\end_layout
+
+\begin_layout Standard
+In this text, the convention of starting private members with a _ is not
+ stricktly adhered to, as it is a Python-only habit.
+ As such it is less practical if Python is combined with C++, which is often
+ the case for the technical and scientific applications that I work on.
+ Also at the beginning of a project it is often not completely clear what
+ belongs to the interface an what not.
+ You should give yourselve some leeway here.
+ But when you cooperate with multiple developers on a Python-only project,
+ using the _ convention may come in handy to make clear to your colleagues
+ what the interface of a class is, from the source code alone .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+TIP: Make your source code self-explanatory.
+ No other documents should be required to understand it.
+ This is because in the end the source code is the only thing that remains
+ up to date through many years of ad hoc changes, company take-overs and
+ job-hopping colleagues.
+ Maybe it shouldn't be so, but trust me, it is.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace defskip
+\end_inset
+
+(Sometimes even the source code of business-critical applications is lost.
+ Ain't no cure against that.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Modules
+\end_layout
+
+\begin_layout Standard
+Python programs can be split into multiple source files called modules.
+ Let's do that with the previous example program:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/dog_walker/dog_walker.py"
+lstparams "caption={prog/dog\\_walker/dog\\_walker}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/dog_walker/bosses.py"
+lstparams "caption={prog/dog\\_walker/bosses.py}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/dog_walker/dogs.py"
+lstparams "caption={prog/dog\\_walker/dogs.py}"
+
+\end_inset
+
+As can be seen, program 
+\emph on
+dog_walker.py
+\emph default
+ imports modules 
+\emph on
+bosses.py
+\emph default
+ and 
+\emph on
+dogs.py
+\emph default
+.
+ By putting these modules in separate files, they could also be used in
+ other programs than 
+\emph on
+dog_walker
+\emph default
+.
+ In order to make this type of reuse practical, it is important that the
+ classes defined in 
+\emph on
+bosses.py
+\emph default
+ and 
+\emph on
+dogs.py
+\emph default
+ have a standard interface that doesn't change whenever any detail in the
+ 
+\emph on
+Boss 
+\emph default
+or 
+\emph on
+Dog
+\emph default
+ classes changes.
+ So the use of _ comes in handy here.
+\end_layout
+
+\begin_layout Section
+Polymorphism
+\end_layout
+
+\begin_layout Standard
+In the previous example, class 
+\emph on
+NatureLover
+\emph default
+ and class 
+\emph on
+CouchPotato
+\emph default
+ have the same interface, namely only method 
+\emph on
+walk
+\emph default
+.
+ Since they have the same interface they may be used in similar ways, even
+ though their implementation of the interface is different.
+ Consider the following program:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/dog_walker/poly_walker.py"
+lstparams "caption={prog/dog\\_walker/poly\\_walker.py},label={lst:poly_walker}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\emph on
+humanBeings 
+\emph default
+list contains objects of different classes: 
+\emph on
+NatureLover 
+\emph default
+and 
+\emph on
+CouchPotato
+\emph default
+.
+ Such a list is called polymorphic which means: 
+\begin_inset Quotes eld
+\end_inset
+
+of many shapes
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Since objects of class 
+\emph on
+NatureLover 
+\emph default
+and objects of class 
+\emph on
+CouchPotato
+\emph default
+ have the same interface, in this case only the 
+\emph on
+walk
+\emph default
+ method, this is not a problem, we can write 
+\emph on
+humanBeing.walk
+\emph default
+, no matter whether we deal with a 
+\emph on
+NatureLover
+\emph default
+ or with a 
+\emph on
+CouchPotato
+\emph default
+.
+ But how they do this walking, the implementation, is different.
+ A 
+\emph on
+NatureLover
+\emph default
+ will join the dog, a 
+\emph on
+CouchPotato
+\emph default
+ will let it go alone.
+\end_layout
+
+\begin_layout Standard
+So providing a standard interface has more advantages than design flexibility
+ alone.
+ If objects of distinct classes have the same interface, they can easily
+ be used without exactly knowing what particular object class you're dealing
+ with.
+ All elements of the 
+\emph on
+humanBeing
+\emph default
+ know how to 
+\emph on
+walk.
+
+\emph default
+ Except they do it differently.
+ Since you don't have to know whether you're dealing with a 
+\emph on
+NatureLover 
+\emph default
+or a 
+\emph on
+CouchPotato
+\emph default
+ to call its 
+\emph on
+walk 
+\emph default
+method, you can store objects of both classes randomly in one object collection,
+ in this case a list, without keeping track of their exact class.
+ It is enough to know they all can 
+\emph on
+walk
+\emph default
+.
+ This careless way of handling different types of objects is called duck
+ typing.
+ If it walks like a duck, swims like a duck, sounds like a duck, let's treat
+ it like a duck.
+ A collection, e.g.
+ a list, containing types of various classes is called a polymorphic object
+ collection.
+ Polymorphic means: of varying shape.
+\end_layout
+
+\begin_layout Standard
+Objects, encapsulation, standard interfaces and polymorphism are important
+ ingredients in the way of programming that was briefly mentioned in the
+ introduction: object oriented programming.
+ You now know what this means: programming in such a way that you deal with
+ objects that contain attributes and methods.
+ Objects naturally 
+\begin_inset Quotes eld
+\end_inset
+
+know
+\begin_inset Quotes erd
+\end_inset
+
+ things (attributes) and 
+\begin_inset Quotes eld
+\end_inset
+
+can do
+\begin_inset Quotes erd
+\end_inset
+
+ things (methods).
+ The alternative would be to keep data and program statements completely
+ separated, a way of working called procedural programming.
+\end_layout
+
+\begin_layout Chapter
+A pinch of functional programming
+\end_layout
+
+\begin_layout Section
+List comprehensions
+\end_layout
+
+\begin_layout Standard
+In the introduction the promise was made to teach you some functional programmin
+g as well.
+ While this may sound a bit arbitrary and even careless, it is not.
+ The aim of this course is to lead you straight to efficient programming
+ habits, not to merely flood you with assorted facts.
+ The combination of object oriented Programming and functional programming
+ is especially powerful.
+ To show a first glimpse of that power, lets slightly reformulate the previous
+ example, using something called a list comprehension.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/dog_walker/func_walker.py"
+lstparams "caption={prog/dog\\_walker/func\\_walker.py},label={lst:func_walker}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+While this example resembles the one before, there's a difference.
+ In 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:poly_walker"
+
+\end_inset
+
+ you told the computer step by step what to do.
+ In line 7 you first created an empty list, although that is not what you
+ wanted in the end.
+ And then you entered a so called loop, starting at line 8.
+ Cycling through this loop ten times, new 
+\emph on
+HumanBeing
+\emph default
+ objects get appended to the list one by one, index running from 0 to 9.
+\end_layout
+
+\begin_layout Standard
+In 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:func_walker"
+
+\end_inset
+
+ you do not first create an empty list.
+ You just specify directly what you want in the end, a list of random objects
+ of class 
+\emph on
+HumanBeing
+\emph default
+, one for each value of index where index running form 0 to 9.
+\end_layout
+
+\begin_layout Standard
+Suppose you want a box with hundred chocolates.
+ You could go to a shop and do the following:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,numbers={none}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Tell the shopkeeper to give you an empty box
+\end_layout
+
+\begin_layout Plain Layout
+
+While counting from 1 to 100:
+\end_layout
+
+\begin_layout Plain Layout
+
+	Tell the shopkeeper to put in a chocolate
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is the approach taken in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:poly_walker"
+
+\end_inset
+
+.
+ But you could also take a different approach:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "numbers={none}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Tell the shopkeeper to give you a box with 100 chocolates counted out for
+ you.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is the approach taken in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:func_walker"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+To tell the shopkeeper chocolate by chocolate how to prepare a box of hundred
+ chocolates is unnatural to most, except for extreme control freaks.
+ But telling a computer step by step what to do 
+\noun on
+is
+\noun default
+ natural to most programmers.
+ There are a number of disadvantages to the control freak approach:
+\end_layout
+
+\begin_layout Enumerate
+Telling the shopkeeper step by step how to fill the chocolate box keeps
+ you occupied.
+ It would be confusing to meanwhile direct the shopkeeper to fill a bag
+ with cookies, cookie by cookie, because in switching between these tasks,
+ you could easily lose track of the proper counts.
+ A programmer would say you cannot multitask very well with the control
+ freak approach.
+\end_layout
+
+\begin_layout Enumerate
+Even doing one thing at a time, you would still have to remember how many
+ chocolates are already in the box, also if you see your partner kissing
+ your best friend through the shop window.
+ A programmer would say you'd have to keep track of the state of the box.
+ That's error prone, the shopkeeper has other options, he can e.g.
+ measure the total weight of the box, which doesn't require remembering
+ anything.
+\end_layout
+
+\begin_layout Enumerate
+The chocolates are put into the box one by one, a time consuming process.
+ The shopkeeper cannot work in parallel with his assistant, each putting
+ fifty cookies in the box, being ready twice as fast.
+\end_layout
+
+\begin_layout Standard
+In principle the Functional Programming approach is suitable to alleviate
+ this problems.
+ It allows for:
+\end_layout
+
+\begin_layout Enumerate
+Multi-tasking, that is switching between multiple tasks on one processor
+ without confusion, since you only have to specify the end result.
+\end_layout
+
+\begin_layout Enumerate
+Stateless programming, which helps avoiding errors that emerge when at any
+ point program state is not what you assume it to be.
+\end_layout
+
+\begin_layout Enumerate
+Multi-processing, that is performing multiple tasks in parallel on multiple
+ processors.
+\end_layout
+
+\begin_layout Standard
+While standard Python does currently not fully benefit from these advantages,
+ learning this way of programming is a good investment in the future, since
+ having multiple processors in a computer is rapidly becoming the norm.
+ Apart from that, once you get used to things like list comprehensions,
+ they are very handy to work with and result in compact but clear code.
+\end_layout
+
+\begin_layout Section
+Transforming all elements of a list
+\end_layout
+
+\begin_layout Standard
+Suppose we fill a list with numbers and from that want to obtain a list
+ with the squares of these numbers.
+ The functional way to do this is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/func_square.py"
+lstparams "caption={prog/func\\_square.py},label={lst:func_square}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The non-functional way requires more code than the functional way.
+ Still the beginning you may prefer the non-functional way, since it shows
+ what's happening step by step.
+ But that will probably shift, once you gain experience.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/nonfunc_square.py"
+lstparams "caption={prog/nonfunc\\_square.py},label={lst:nonfunc_square}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Selecting certain elements from a list
+\end_layout
+
+\begin_layout Standard
+Suppose we have a list with names and from that want to obtain a list with
+ only those names starting with a 'B'.
+ The functional way to do this is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/func_select.py"
+lstparams "caption={prog/func\\_select.py},label={lst:func_select}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The non functional way again needs more words:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/nonfunc_select.py"
+lstparams "caption={prog/nonfunc\\_select.py},label={lst:nonfunc_select}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Computing sum from a list
+\end_layout
+
+\begin_layout Standard
+Suppose we have a list with numbers and from that want to obtain the sum
+ of that numbers.
+ The functional way to do this is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/func_sum.py"
+lstparams "caption={prog/func\\_sum.py},label={lst:func_sum}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The non functional way is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/nonfunc_sum.py"
+lstparams "caption={prog/nonfunc\\_sum.py},label={lst:nonfunc_sum}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Free functions and lambda expressions
+\end_layout
+
+\begin_layout Standard
+Whereas methods are part of a class, free functions can be defined anywhere.
+ They don't have a self parameter, and are not preceded by an object and
+ a dot, when called.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/free_functions.py"
+lstparams "caption={prog/free\\_functions.py},label={lst:free_functions}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is also possible to define free functions that don't have a name.
+ These are called lambda functions, and are written in a shorthand way,
+ as can be seen in the following program:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/lambdas.py"
+lstparams "caption={prog/lambdas.py},label={lst:lambdas}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The following program makes use of several free functions to compute the
+ area of squares and the volume of cubes from a list of side lengths:
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/free_functions2.py"
+lstparams "caption={prog/free\\_functions2.py},label={lst:free_functions2}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Take a good look at the 
+\emph on
+apply 
+\emph default
+function.
+ Its first formal parameter, 
+\emph on
+compute
+\emph default
+, is a free function, that will then be applied to each element of the second
+ formal parameter, 
+\emph on
+numbers
+\emph default
+, that is a list.
+ Since the 
+\emph on
+area 
+\emph default
+and 
+\emph on
+volume
+\emph default
+ functions are only used as actual parameter to 
+\emph on
+apply
+\emph default
+, they can also be anonymous, as is demonstrated in the program below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/lambdas2.py"
+lstparams "caption={prog/lambdas2.py},label={lst:lambdas2}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is quite possible to give a lambda function a name, like this:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/named_lambda.py"
+lstparams "caption={prog/named\\_lambda.py},label={lst:named_lambda}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Inheritance
+\end_layout
+
+\begin_layout Section
+Implementation inheritance
+\end_layout
+
+\begin_layout Standard
+Classes can inherit methods and attributes from other classes.
+ The class that inherits is called descendant class or derived class.
+ The class that it inherits from is called ancestor class or base class.
+ Look at the following example:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/radio_vision.py"
+lstparams "caption={prog/radio\\_vision.py},label={lst:radio_vision.py}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In line 15 the 
+\emph on
+play
+\emph default
+ method of class 
+\emph on
+Television 
+\emph default
+calls the 
+\emph on
+show 
+\emph default
+method of the same class.
+ In line 16 it calls the 
+\emph on
+play
+\emph default
+ method of class 
+\emph on
+Radio.
+
+\emph default
+ Compare 15 to 16.
+ In line 15 
+\emph on
+self
+\emph default
+ is placed before the dot.
+ Since in line 16 the 
+\emph on
+Radio
+\emph default
+ class occupies the place before the dot, 
+\emph on
+self
+\emph default
+ is passed as first parameter there.
+ The same holds for line 11, where the constructor of 
+\emph on
+Television
+\emph default
+ calls the constructor of 
+\emph on
+Radio
+\emph default
+.
+ Although this class hierarchy is allowed, an experienced designer would
+ not program it like this.
+\end_layout
+
+\begin_layout Enumerate
+A television is not merely some special type of radio with a screen glued
+ on.
+ It has become a totally different device altogether.
+\end_layout
+
+\begin_layout Enumerate
+A radio may have facilities that a television hasn't, e.g.
+ an analog tuning dial.
+ Televisions would inherit that, but it would serve no purpose and just
+ be confusing.
+\end_layout
+
+\begin_layout Enumerate
+It would probably be more flexible to have class 
+\emph on
+Radio 
+\emph default
+and class 
+\emph on
+Television 
+\emph default
+both inherit from an abstract class: 
+\emph on
+Microelectronics.
+
+\emph default
+ Abstract classes are classes that serve as a general category, but of which
+ there are no objects.
+ The objects themselves are always specialized, so either of class 
+\emph on
+Radio
+\emph default
+ or of class 
+\emph on
+Television
+\emph default
+.
+ Abstract base classes are handy to specify an interface without making
+ early choices about how that interface is implemented.
+\end_layout
+
+\begin_layout Section
+Interface inheritance
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Interface-inheritance"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+An example of a class hierarchy with an abstract class at the top is given
+ in the following program:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/nature_sleeper.py"
+lstparams "caption={prog/nature\\_sleeper.py},label={lst:nature_sleeper}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Class 
+\emph on
+HumanBeing
+\emph default
+ is abstract, since it don't have the methods 
+\emph on
+begin_walk
+\emph default
+ and 
+\emph on
+end_walk
+\emph default
+, that are called in 
+\emph on
+walk
+\emph default
+ in line 8 and 11.
+ So it's no use creating objects of that class, since they don't know how
+ to 
+\emph on
+walk
+\emph default
+.
+ All other classes inherit the 
+\emph on
+walk
+\emph default
+ method, so they don't have to define a
+\emph on
+ walk
+\emph default
+ method of their own.
+ Since they all inherit 
+\emph on
+walk
+\emph default
+, they are guaranteed to support the it in their interface.
+ But they define their own specialized implementation of 
+\emph on
+begin_walk
+\emph default
+ and 
+\emph on
+end_walk
+\emph default
+.
+ Note that the 
+\emph on
+begin_walk
+\emph default
+ and 
+\emph on
+end_walk
+\emph default
+ of 
+\emph on
+OutdoorSleeper
+\emph default
+ call upon the 
+\emph on
+begin_walk
+\emph default
+ and 
+\emph on
+end_walk
+\emph default
+ of 
+\emph on
+NatureLover
+\emph default
+ and 
+\emph on
+CouchPotato
+\emph default
+ to do their job.
+\end_layout
+
+\begin_layout Standard
+Be sure to follow every step of the example program above, since it contains
+ important clues to an object oriented programming style called 
+\begin_inset Quotes eld
+\end_inset
+
+Fill in the blanks
+\begin_inset Quotes erd
+\end_inset
+
+ programming: Specify as much as you can high up in the class hierarchy
+ (method 
+\emph on
+walk
+\emph default
+), and only fill in specific things (methods 
+\emph on
+begin_walk
+\emph default
+ and
+\emph on
+ end_walk
+\emph default
+) in the descendant classes.
+ It is with 
+\begin_inset Quotes eld
+\end_inset
+
+Fill in the blanks
+\begin_inset Quotes erd
+\end_inset
+
+ programming that true object orientation starts to deliver.
+ While this isn't visible in a small example, 
+\begin_inset Quotes eld
+\end_inset
+
+Fill in the blanks
+\begin_inset Quotes erd
+\end_inset
+
+ programming makes the source code of your class hierarchy shrink while
+ gaining clarity, a sure sign that you're on the right track.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Fill in the blanks
+\begin_inset Quotes erd
+\end_inset
+
+ programming is one place where the DRY principle of programming pays of:
+ Don't Repeat Yourself.
+ If you can specify behaviour in an ancestor class, why specify it over
+ and over again in the descendant classes.
+ If you follow the DRY principle, your code becomes more flexible, because
+ changes in behaviour only have to be made in one single place, avoiding
+ the risk of inconsistent code.
+\end_layout
+
+\begin_layout Standard
+Apart from following the DRY principle, the fact that interface methods
+ defined higher up in the class hierarchy are automatically there in derived
+ classes, is in itself one of the most powerful features of inheritance:
+ Having objects of different subclasses all inherit the same standard interface
+ contributes to design flexibility, since these objects become highly interchang
+eable, even though their behaviour is different.
+\end_layout
+
+\begin_layout Standard
+As a bonus the size of the code
+\noun on
+ using
+\noun default
+ these objects also shrinks, since it only has to deal with one type of
+ interface.
+ When switching from procedural to object oriented programming, it is not
+ uncommon to see the source code shrink with a factor five.
+ While briefness never is a goal in itself, it is a very important contribution
+ to clarity: What isn't there doesn't have to be understood.
+ The difference between having to get your head around twenty pages of source
+ code as opposed to a hundred may veryAs an exampl we will be using a game
+ engine library called Pyglet.
+ well be crucial in successfully understanding the work of a colleague,
+ or your own work of several years back, for that matter.
+\end_layout
+
+\begin_layout Section
+Inheriting from library classes
+\end_layout
+
+\begin_layout Standard
+In 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sub:Interface-inheritance"
+
+\end_inset
+
+ the concept of modules was explained.
+ There are many ready-made modules available for Python.
+ Some are distributed with Python itself.
+ Others are part of so called libraries.
+ A library is a collection of modules that together enable you to make a
+ specific category of programs without coding all the details yourself.
+ For Python there are lots of libraries available to help you build almost
+ any type of computer program.
+ The majority of these libraries are available on 
+\begin_inset CommandInset href
+LatexCommand href
+name "https://pypi.python.org/pypi"
+target "https://pypi.python.org/pypi"
+
+\end_inset
+
+.
+ An important part of the power of Python lies in the fact that so many
+ libraries are available for it, most of them for free.
+ As an example we will be using a library called Pyglet.
+ Pyglet provides basic building blocks, like sprites (small moving objects),
+ text labels and windows to make simulations and games.
+ One way to use these building blocks is to inherit from them.
+ Since the purpose of inheriting in this case is to use their behaviour
+ in our own application, this is an example of implementation inheritance.
+ The following program uses inheritance from Pyglet classes to make some
+ sprites randomly drift apart.
+ Study the source code and experiment with it, making small changes and
+ see what the effect is.
+ Consult the Pyglet documentation where necessary.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/intro_pyglet/drifting_sprites.py"
+lstparams "caption={intro\\_pyglet/drifting\\_sprites.py},label={lst:intro_pyglet/drifting_sprites}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Objects and the real world
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Objects-and-the-real-world"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Object oriented modeling
+\end_layout
+
+\begin_layout Standard
+One way or another, most computer programs represent something in the real
+ world.
+ Example programs in tutorials are often about administration, the objects
+ representing real world things like companies, departments, employees and
+ contracts.
+ But writing administrative software is just one way to capture reality
+ and put it into a computer.
+ Dynamic modeling of physics, like applied in simulations and games, is
+ another way.
+ An employee would not be modeled by its name, address and salary, but rather
+ by a moving on-screen avatar (stylized image of a person) controlled by
+ a game paddle.
+ Simulations and games are what we'll use as examples in this text.
+ Having objects represent things in the real world, either in an administrative
+ way or by means of simulation is called object oriented modeling, and your
+ eventual computer program is said to be a 'model' of some aspect of the
+ real world ('application domain').
+\end_layout
+
+\begin_layout Standard
+In short, object oriented modeling consists of the following steps:the descendan
+ts
+\end_layout
+
+\begin_layout Enumerate
+Analysis: Find out which type of things play a role in the part of the real
+ world that your program is about (the 'application domain') and how they
+ relate to each other.
+ Represent each relevant type of thing by a class.
+ These classes are called 'domain classes'.
+ If a 
+\emph on
+B
+\emph default
+ object denotes a special type of 
+\emph on
+A
+\emph default
+ object, let class 
+\emph on
+B
+\emph default
+ inherit from class
+\emph on
+ A
+\emph default
+.
+ If a 
+\emph on
+C
+\emph default
+ object refers to a 
+\emph on
+D
+\emph default
+ object, let 
+\emph on
+C
+\emph default
+ have an attribute of class 
+\emph on
+D
+\emph default
+.
+ Note that attributes merely 
+\noun on
+refer
+\noun default
+ to an object, they are not the object itself.
+ So two objects may refer to each other, both holding a reference to the
+ other as an attribute.
+ The result of this first step is called a domain model.
+\end_layout
+
+\begin_layout Enumerate
+Design: Try to generalize the concepts in your application domain, in order
+ to come up with a sensible inheritance hierarchy, e.g.
+ looking for common interfaces or common functionality.
+ This will lead to the addition of so called design classes, as opposed
+ to the domain classes that result from step 1.
+ Your domain model has now evolved into a design model.
+\end_layout
+
+\begin_layout Enumerate
+Programming: Elaborate your code to put whole thing to work, in our case
+ in Python.
+ Adjust your class hierarchy as your understanding of the problem at hand
+ grows.
+ Your program will be a working object oriented model of a part or aspect
+ of the real world.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+TIP: The steps usually ovelap.
+ It is very efficient to inventorize domain classes and design a class hierarchy
+ using Python syntax right from the start, adding permanent comments to
+ document why you took certain design decisions.
+ Some people like to view the relations between e.g.
+ classes in a graphical way.
+ There exist several tools that generate diagrams from Python source code.
+ Don't go the opposite way: generating source code from diagrams.
+ This only works in the simplest of situations and is too restrictive in
+ the long run.
+ Some people limit the use of the term 'Domain Modeling' to step 1.
+ In my view the resulting computer program itself is the model we're eventually
+ after.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Pong, the object oriented way
+\end_layout
+
+\begin_layout Standard
+Let's look at the humblest of all computer games: Pong.
+\end_layout
+
+\begin_layout Enumerate
+Analysis: The application domain to be modeled is the real world game of
+ table tennis.
+ Things that play an important role in that application domain are paddles,
+ a ball, a scoreboard and the notion of a game.
+ To play the game, the paddles can be moved.
+ The ball can bounce against the paddles, which changes its direction as
+ dictated by physics.
+ Whenever the ball goes out, the score is adapted.
+ To represent the application domain, we need one object of class 
+\emph on
+Ball
+\emph default
+ and two objects of class 
+\emph on
+Paddle
+\emph default
+ an object of class 
+\emph on
+Scoreboard
+\emph default
+, and, less obvious since you can not touch or eat it: an object of class
+ 
+\emph on
+Game
+\emph default
+.
+ And we'll have to establish relations between the objects and sometimes
+ between the classes.
+\end_layout
+
+\begin_layout Enumerate
+Design: Each game has attributes (not in the programming sense of the word
+ but in the every day sense).
+ For example the main attributes required for skiing ar skis, sticks and
+ a helmet.
+ In our game the 
+\emph on
+Paddl
+\emph default
+e objects, 
+\emph on
+Ball
+\emph default
+ object and 
+\emph on
+Scoreboard
+\emph default
+ object are all attributes, i.e.
+ they are a specialisation of class 
+\emph on
+Attribute
+\emph default
+.
+ Whereas the scoreboard stays in place, the paddles and ball move around
+ the screen.
+ Such small moving objects are called sprites, so instances of class 
+\emph on
+Sprite
+\emph default
+.
+ Note that 
+\emph on
+Attribute 
+\emph default
+and 
+\emph on
+Sprite
+\emph default
+ are no domain classes.
+ Rather they are added during design to catch commonalities in the domain
+ classes resulting from step 1.
+ Such classes are called design classes.
+ As we will see, all descendants of class 
+\emph on
+Attribute 
+\emph default
+share the same interface, enabling polymorphism.
+\end_layout
+
+\begin_layout Enumerate
+Programming: We need to elaborate those classes to make the program work
+ rather than just sit there.
+ Paddles need to be movable via the keyboard.
+ The ball has to bounce against the paddles and the wall.
+ If the ball goes out,the score has to be adapted.
+ Partially we'll code this functionality ourselves, partially it will be
+ taken from the Pyglet game engine library downloaded from Pypi.
+\end_layout
+
+\begin_layout Section
+Step 1, analysis: Drawing up the domain model
+\end_layout
+
+\begin_layout Standard
+In step 1, take stock of the domain classes to obtain the following valid
+ Python program:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/pong/pong1.py"
+lstparams "caption={pong/pong1py},label={lst:pong/pong1}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As the second part of step 1, inventorize the relations between objects
+ or classes:
+\end_layout
+
+\begin_layout Itemize
+Each 
+\emph on
+Paddle
+\emph default
+ instance needs a 
+\emph on
+game
+\emph default
+ attribute that is a reference to game that it's part of.
+ It also needs an index attribute that indicates wether it is the left or
+ the right paddle.
+\end_layout
+
+\begin_layout Itemize
+The 
+\emph on
+Ball
+\emph default
+ instance needs a 
+\emph on
+game
+\emph default
+ attribute that is a reference to the game that it's part of.
+\end_layout
+
+\begin_layout Itemize
+The 
+\emph on
+Scoreboard
+\emph default
+ instance needs a 
+\emph on
+game
+\emph default
+ attribute that is a reference to the game that it's part of.
+\end_layout
+
+\begin_layout Itemize
+The 
+\emph on
+Game
+\emph default
+ needs a 
+\emph on
+paddles
+\emph default
+ attribute that is a list of references to the paddles of the game, a 
+\emph on
+ball
+\emph default
+ attribute that is a reference to the ball of the game and a 
+\emph on
+scoreboard
+\emph default
+ attribute that is a reference to the scoreboard of the game.
+\end_layout
+
+\begin_layout Standard
+Formulate these relations in Python, to obtain the following code:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/pong/pong2.py"
+lstparams "caption={pong/pong2},label={lst:pong/pong2}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Take your time to study 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:pong/pong2"
+
+\end_inset
+
+.
+ Make sure you understand each and every line of it before proceeding.
+ Run it to make sure it is a again a valid Python program, even though it
+ doesn't yet do anything.
+ After every step we take, the intermediate result should be a valid Python
+ program.
+ Check that.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+TIP: Use this approach also with your own programs.
+ Make sure you always have a runnable program.
+ If you make changes, keep the last version until the new one runs correctly.
+ It is always easier to find a bug departing from a running version than
+ from a version that does not run at all.
+ Regularly store versions and keep them around forever.
+ I've programmed the larger part of my life, but all the source code will
+ easily fit on one memory stick.
+ A simple, robust way to label versions is by prepending the date and a
+ subnumber, e.g.
+ pong_y15m11d26_2.
+ Of course you can also use a version control system like GitHub but never
+ completely rely on it, use multiple backup strategies in parallel.
+ Loosing hard-fought source code is very frustrating.
+ Store backups outside your computer, preferably in a physically separate
+ location.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Step 2, design: Turning the domain model into a design model
+\end_layout
+
+\begin_layout Standard
+Continue with step 2, adding design classes to capture commonalities in
+ the domain classes.
+ This is where it gets interesting.
+ There's no single recipe to do this properly.
+ Be prepared to retrace your steps and explore alternative solutions.
+ Raising the bar here pays off manifold once you go to step 3.
+\end_layout
+
+\begin_layout Standard
+In this case the design classes (as opposed to domain classes) 
+\emph on
+Attribute
+\emph default
+ and class 
+\emph on
+Sprite
+\emph default
+ are added.
+ The term 'attribute' used here has nothing to do with programming.
+ Things you need for a game or sport are called its attributes in everyday
+ language.
+ The term 'sprite' on the other hand, is a programming term.
+ A sprite a small moving object on the screen.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/pong/pong3.py"
+lstparams "caption={pong/pong3},label={lst:pong/pong3}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+While this program starts to really look like something, still it doesn't
+ do anything.
+ To make it work we'll use facilities from the Pyglet library.
+ Pyglet has a Label class that can be used to draw the scoreboard and it
+ has a Sprite class of its own, 
+\emph on
+pyglet.sprite.Sprite
+\emph default
+, to animate our sprites.
+ We'll put a 
+\emph on
+pygletSprite 
+\emph default
+attribute of that class into our own 
+\emph on
+Sprite
+\emph default
+ class, to add 'sprity' behaviour to it.
+ And we'll put several 
+\emph on
+Pyglet.text.Label
+\emph default
+ instances in our 
+\emph on
+Scoreboard 
+\emph default
+class, so that it can indeed show scores.
+\end_layout
+
+\begin_layout Standard
+But first we take a high-level look.
+ It may seem that continuously repeating the the following steps would be
+ sufficient:
+\end_layout
+
+\begin_layout Enumerate
+Compute the position of the paddles and the ball from the keyboard input,
+ their previous position, their velocity and the elapsed time.
+\end_layout
+
+\begin_layout Enumerate
+Check for collisions between ball, paddles and walls and adapt the ball
+ and paddle velocity and position to these 
+\emph on
+collisions
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+But when these three steps are executed sequentially, a problem occurs.
+ Pyglet sprites have an 
+\emph on
+x
+\emph default
+ and a 
+\emph on
+y
+\emph default
+ coordinate.
+ As soon as these coordinates are set, the sprite can be shown at that location.
+ 'Can be', because we have no control over exactly 
+\noun on
+when
+\noun default
+ a sprite will be shown on the screen.
+ The process that actually displays the sprites is asynchroneous.
+ This means that it runs in parallel with our own code, displaying sprites
+ at unexpected moments.
+ So it may very well be that a sprite is drawn after step 1, when the position
+ has not yet been corrected for collisions.
+ This may result in the ball briefly flying right through the paddles.
+ To prevent this, repeat the following steps instead:
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+predict
+\emph default
+: Compute the predicted velocity and position of the paddles and the ball
+ from the keyboard input, their previous position and velocity and the elapsed
+ time, but store these new values in the 
+\emph on
+vX
+\emph default
+,
+\emph on
+ vY
+\emph default
+,
+\emph on
+ x
+\emph default
+ and 
+\emph on
+y
+\emph default
+ attributes of our own 
+\emph on
+Sprite
+\emph default
+ instances.
+ Do not yet overwrite the 
+\emph on
+x
+\emph default
+ and 
+\emph on
+y
+\emph default
+ attributes of the
+\emph on
+ pygletSprite
+\emph default
+ attributes of our 
+\emph on
+Sprite
+\emph default
+ instances.
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+interact
+\emph default
+: Check for collisions between ball, paddles and walls and adapt the ball
+ and paddle velocity and position to these collisions, correcting the values
+ of the 
+\emph on
+vX, vY, x
+\emph default
+ and 
+\emph on
+y
+\emph default
+ attributes of our sprites.
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+commit
+\emph default
+: After all corrections have been done, copy 
+\emph on
+x
+\emph default
+ and 
+\emph on
+y
+\emph default
+ from each 
+\emph on
+Sprite
+\emph default
+ instance to its 
+\emph on
+pygletSprite
+\emph default
+ attribute, to be rendered to the screen by Pyglet.
+\end_layout
+
+\begin_layout Standard
+Before entering the 
+\emph on
+predict
+\emph default
+, 
+\emph on
+interact
+\emph default
+, 
+\emph on
+commit
+\emph default
+ cycle, it must be possible to 
+\emph on
+reset
+\emph default
+ the game attributes: paddles and ball in start position, score 0 - 0.
+ All of this is incorporated in the next version of pong:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/pong/pong4.py"
+lstparams "caption={pong/pong4},label={lst:pong/pong4}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The methods 
+\emph on
+reset
+\emph default
+, 
+\emph on
+interact
+\emph default
+, 
+\emph on
+cycle
+\emph default
+ and 
+\emph on
+commit 
+\emph default
+constitute the interface inherited by all subclasses of class 
+\emph on
+Attribute
+\emph default
+.
+ Since all attributes have the same interface functions, these functions
+ can be called in a uniform way by looping over the 
+\emph on
+attributes
+\emph default
+ list of the 
+\emph on
+Game
+\emph default
+ instance, as can be seen in line 53 - 64 of 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:pong/pong4"
+
+\end_inset
+
+.
+ Completing step 2, we have now set up the complete program structure without
+ any reference to the Pyglet library.
+\end_layout
+
+\begin_layout Section
+Step 3, programming: Working out program logic and laying the connection
+ with Pyglet
+\end_layout
+
+\begin_layout Standard
+Now that the overall program structure stands, we will proceed with step
+ 3, programming, by adding specific implementations of the 
+\emph on
+reset
+\emph default
+, 
+\emph on
+interact
+\emph default
+, 
+\emph on
+cycle
+\emph default
+ and 
+\emph on
+commit 
+\emph default
+functions to the classes derived from 
+\emph on
+Attribute
+\emph default
+, to account for keyboard interaction, motion and collisions As can be seen
+ in the listings, 
+\emph on
+e.g.
+ pyglet.sprite.Sprite 
+\emph default
+and 
+\emph on
+Pyglet.text.Label 
+\emph default
+instances are added, laying the connection with the Pyglet library.
+ You'll find the details about the elements taken from Pyglet in its documentati
+on.
+\end_layout
+
+\begin_layout Standard
+A very important point is that the overall program structure doesn't change
+ much during step 3.
+ If you understood 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:pong/pong4"
+
+\end_inset
+
+, you are in a good position to gain understanding of 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:pong/pong"
+
+\end_inset
+
+, guided by this overall structure.
+ The activity of designing largely boiled down to establishing the overall
+ program structure.
+ After that, filling in the details becomes doable, because everything has
+ its natural place in this structure.
+ The result below is a typical, be it small, Object Oriented application.
+ Study 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:pong/pong"
+
+\end_inset
+
+ carefully and experiment with it, making small changes and running the
+ program to see what the effect is.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/pong/pong.py"
+lstparams "caption={pong/pong.py},label={lst:pong/pong}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+TIP: There's some more wisdom to be derived from 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "lst:pong/pong"
+
+\end_inset
+
+.
+ Note how constants like 
+\emph on
+orthoWidth
+\emph default
+ on line 8 and 
+\emph on
+margin
+\emph default
+ on line 67 are used.
+ The use of a constant in those cases is justified according to the DRY
+ principle.
+ If two or more numbers are 
+\noun on
+always
+\noun default
+ identical, use a named constant for them, so you only have to make changes
+ in one place if their value changes.
+ But the window dimensions on line 203, 
+\emph on
+640
+\emph default
+ x 
+\emph on
+480
+\emph default
+ pixels, are only used there.
+ Using named constants in this case has no benefits, unless one wants to
+ define all such values in one central place.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Design patterns
+\end_layout
+
+\begin_layout Section
+The solution principles behind your source code
+\end_layout
+
+\begin_layout Standard
+
+\noun on
+A design pattern is a solution principle that can be used over and over
+ again in different, but comparable, situations.
+\end_layout
+
+\begin_layout Standard
+So a design pattern 
+\noun on
+is not
+\noun default
+ a piece of code, but rather the solution principle behind it.
+ Still, Python code can be used to clarify design patterns by example.
+ Part of learning how to design software is to recognize general patterns
+ in your own code and have them at hand as a kind of language independent
+ toolbox, growing with experience.
+ The 
+\emph on
+predict
+\emph default
+, 
+\emph on
+interact
+\emph default
+, 
+\emph on
+commit
+\emph default
+ solution used in the Pong example is such a design pattern.
+ It can be used in many different games and simulations and in any programming
+ language.
+ One of the reasons to always keep the source code of past projects at hand,
+ is because it contains your personal toolbox of design patterns.
+ I regularly find myself looking up solutions for certain situations that
+ I came up with ten to twenty years ago.
+ It helps me to explicitly notice them and give them a name: 
+\emph on
+ticked-and-slip protocol
+\emph default
+, 
+\emph on
+event driven evaluation nodes (eden) 
+\emph default
+and
+\emph on
+ self inserter
+\emph default
+.
+ There are some very well known design patterns, going by names like 
+\emph on
+observer
+\emph default
+, 
+\emph on
+facade
+\emph default
+, 
+\emph on
+bridge
+\emph default
+ and 
+\emph on
+abstract factory
+\emph default
+.
+ These patterns are rather general but also rather crude.
+ They all have many variations and refinements, sometimes with different
+ names.
+ The 
+\emph on
+observer
+\emph default
+ pattern has a variation called 
+\emph on
+publisher-subscriber 
+\emph default
+and another one called 
+\emph on
+event listener
+\emph default
+.
+ It is worth while to look at a few of these widespread design patterns,
+ since they are a useful source of ideas if you have not yet written that
+ much code yourself.
+\end_layout
+
+\begin_layout Section
+The Observer pattern
+\end_layout
+
+\begin_layout Subsection
+Example situation
+\end_layout
+
+\begin_layout Standard
+We want to build the game of Tic Tac Toe, that's the one where you try to
+ get three noughts or crosses on a row.
+ But we want to have two views of the playing field.
+ The first one is an alphanumerical view, showing a nought as the letter
+ O and a cross as the letter X.
+ The second one is a binary view, shown a nought as the digit 0 and a cross
+ ast the digit 1.
+ The two views have to be kept in sync.
+ A naive strategy would be to let the game logic update both views by writing
+ O's and X'es to the one and 0's and 1's to the other.
+ For this trivial example that would be OK.
+
+\noun on
+ But in general it is undesirable that the game logic should know how to
+ update a certain type of view.
+
+\noun default
+ The number of possible ways to view the game state is endless, as is the
+ number of instances of each type of view.
+\end_layout
+
+\begin_layout Subsection
+Solution principle
+\end_layout
+
+\begin_layout Standard
+Rather the 
+\noun on
+game logic should just notify all views
+\noun default
+ that something has changed.
+ The 
+\noun on
+views should then know how to update themselves
+\noun default
+, pulling out the relevant information from the game state, and display
+ it any way they think fit, from 0's and 1's on a terminal to shiny balls
+ and cubes in a graphics window, or perhaps boops and beeps from a loudspeaker.
+ Lets elaborate this solution principle in a class diagram:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imag/patterns/observer.png
+	width 15cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tic Tac Toe Observer example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+TicTacToeSubject
+\emph default
+ contains the game logic, altering the game 
+\emph on
+state
+\emph default
+ with each move
+\emph on
+.
+ TicTacToeSubject
+\emph default
+ is a specialization of the 
+\emph on
+Subject
+\emph default
+ class, embodies one halve of the Observer pattern.
+ Subjects are able to 
+\emph on
+attach
+\emph default
+ observers to themselves by placing them into an 
+\emph on
+observers
+\emph default
+ list and storing a back reference in 
+\emph on
+subject
+\emph default
+ attribute of the 
+\emph on
+observer
+\emph default
+ as well.
+ They then can notify their observers of any changes by means of their 
+\emph on
+notifyObservers
+\emph default
+ method, that will call the 
+\emph on
+update
+\emph default
+ method on each observer.
+\end_layout
+
+\begin_layout Standard
+Class 
+\emph on
+Observer
+\emph default
+ embodies the other halve of the Observer pattern.
+ The 
+\emph on
+Observer
+\emph default
+ class has an 
+\emph on
+update
+\emph default
+ method.
+ It is just there to define the interface, not to do anything useful.
+ Such a method is called abstract, and its name is italicized in the diagram.
+ Having at least one abstract method makes the whole 
+\emph on
+Observer 
+\emph default
+class abstract, since no fully functional objects can be instantiated from
+ it.
+ So the name of the 
+\emph on
+Observer 
+\emph default
+class is italicized as well.
+\end_layout
+
+\begin_layout Standard
+Class 
+\emph on
+TicTacToeObserver
+\emph default
+ inherits from 
+\emph on
+Observer
+\emph default
+.
+ Its 
+\emph on
+update 
+\emph default
+method reads the state from the 
+\emph on
+TicTacToeSubject
+\emph default
+ and displays it.
+ It isn't called directly on a 
+\emph on
+TicTacToeObserver
+\emph default
+, but on an 
+\emph on
+AlphaObserver
+\emph default
+ or a 
+\emph on
+BinObserver
+\emph default
+ that inherit this method, so it uses the
+\emph on
+ symbols
+\emph default
+ of one of these descendant classes.
+  
+\end_layout
+
+\begin_layout Subsection
+Example code
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+TIP: The class diagram showed in broad lines how the Tic Tac Toe example
+ works.
+ If you use diagrams like that, keep them simple.
+ The right place for details is properly commented source code.
+ Avoid complicated diagramming tools, that subvert freedom of expression
+ by enforcing all kinds of strickt rules.
+ Diagrams are only there to help imagination a bit.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Having understood the class diagram, you're now ready for the real thing:
+ Use the force, read the source!
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/patterns/observer.py"
+lstparams "caption={patterns/observer.py},label={lst:patterns/observer}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+The Adapter pattern
+\end_layout
+
+\begin_layout Subsection
+Example situation
+\end_layout
+
+\begin_layout Standard
+This example is about a tiny part of a control for an Automated Stacking
+ Crane or ASC.
+ ASC's store and retrieve containers that are kept in stock by even thousands
+ in the so called stacking area of a container terminal.
+ All ASC's together are controlled by the so called Movement Planner.
+ The task of the Movement Planner to plan for efficient storage and retrieval
+ of containers, e.g.
+ keeping containers that have to leave first on top of the stacks or or
+ put interchangeable containers on top of each other.
+ The Movement Planner works with an elementary displacement from A to B
+ called a 
+\emph on
+move
+\emph default
+.
+ The cranes, however, works with so called 
+\emph on
+get
+\emph default
+ and 
+\emph on
+put
+\emph default
+ orders.
+ To 
+\emph on
+move
+\emph default
+ a container from A to B it has to first receive a 
+\emph on
+get
+\emph default
+ order, to pick it up at A, and then a 
+\emph on
+put
+\emph default
+ order to put it down at B.
+ So there's a mismatch between how the Movement Planner requests a displacement
+ (
+\emph on
+move
+\emph default
+ interface) and how the ASC expects to receive it (
+\emph on
+get
+\emph default
+ and 
+\emph on
+put
+\emph default
+ interface).
+ Since there's a mismatch between these two interfaces, what's needed is
+ an adaptor.
+\end_layout
+
+\begin_layout Subsection
+Solution principle
+\end_layout
+
+\begin_layout Standard
+Adaptors come in two kinds, the first one being the Object Adapter:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imag/patterns/objectAdapter.png
+	width 15cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ASC Object Adapter example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The interface of class 
+\emph on
+RouteSegmenter 
+\emph default
+consists of the 
+\emph on
+move
+\emph default
+ method, as required by the 
+\emph on
+MovementPlanner
+\emph default
+.
+ The 
+\emph on
+AscSequenceControl
+\emph default
+ has an interface consisting of the 
+\emph on
+get
+\emph default
+ and 
+\emph on
+put
+\emph default
+ methods.
+ Class 
+\emph on
+AscRouteSegmenter
+\emph default
+ inherits its interface from 
+\emph on
+RouteSegmenter
+\emph default
+.
+ It contains an attribute of type
+\emph on
+ AscSequenceControl
+\emph default
+ and it implements its
+\emph on
+ move 
+\emph default
+interface method by calling 
+\emph on
+get
+\emph default
+ and 
+\emph on
+put
+\emph default
+ upon this attribute.
+ The 
+\emph on
+get 
+\emph default
+and 
+\emph on
+put 
+\emph default
+methods themselves are not added to the interface.
+ Moreover it is possible for an 
+\emph on
+AscRouteSegmenter
+\emph default
+ to contain multiple instances of 
+\emph on
+AscSequenceControl
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+The other kind of adapter is the Class Adapter:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imag/patterns/classAdapter.png
+	width 15cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ASC Class Adaper example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Class 
+\emph on
+AscRouteSegmenter 
+\emph default
+now inherits from both the 
+\emph on
+RouteSegmenter 
+\emph default
+interface class and from the 
+\emph on
+AscSequenceControl 
+\emph default
+class that contains the implementations of 
+\emph on
+get
+\emph default
+ and 
+\emph on
+put
+\emph default
+.
+ Interface method 
+\emph on
+move 
+\emph default
+now calls these two inherited methods, not via an attribute but directly.
+ Note that the 
+\emph on
+AscRouteSegmenter
+\emph default
+ does 
+\noun on
+not contain
+\noun default
+ an 
+\emph on
+AscSequenceControl
+\emph default
+ in that case, it 
+\noun on
+is
+\noun default
+ an 
+\emph on
+AscSequenceControl
+\emph default
+.
+ This means that its interface contains 
+\emph on
+move
+\emph default
+ as well as 
+\emph on
+get 
+\emph default
+and 
+\emph on
+put
+\emph default
+.
+ And there can't be multiple instances of 
+\emph on
+AscSequenceControl
+\emph default
+ embedded in one 
+\emph on
+AscRouteSegmenter
+\emph default
+.
+\end_layout
+
+\begin_layout Subsection
+Example code
+\end_layout
+
+\begin_layout Standard
+The code of the object adaptor version is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/patterns/objectAdapter.py"
+lstparams "caption={patterns/objectAdapter.py},label={lst:patterns/objectAdapter}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The code of the Class Adapter is slightly more compact:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/patterns/classAdapter.py"
+lstparams "caption={patterns/classAdapter.py},label={lst:patterns/classAdapter}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nevertheless, in most cases use of the Object Adaptor is to be preferred
+ for two reasons:
+\end_layout
+
+\begin_layout Enumerate
+In general, it is desirable if interfaces are stable and thin.
+ Stable means that they do not have to be changed with every minor change
+ of the design.
+ Standardization only reduces costs if you can rely on standards not constantly
+ changing.
+ Thin means that there are not too many methods or attributes that are part
+ of the interface.
+ Having a lot of methods or attributes in the interface of a class entails
+ that some code elsewhere in the program may be dependent upon the presence
+ of all those methods or attributes.
+ In our class adapter example the 
+\emph on
+get 
+\emph default
+and
+\emph on
+ put 
+\emph default
+of 
+\emph on
+AscSequenceControl 
+\emph default
+are inherited and become part of the interface of 
+\emph on
+AscRouteSegmenter
+\emph default
+.
+ As a consequence of this, the amount of work involved in changing the interface
+ of 
+\emph on
+AscSequenceControl 
+\emph default
+(
+\emph on
+get 
+\emph default
+and 
+\emph on
+put
+\emph default
+) could be unnecessarly high, since not only code that uses 
+\emph on
+AscSequenceControl 
+\emph default
+directly but also code that uses 
+\emph on
+AscRouteSegmenter
+\emph default
+ would have to be changed.
+\end_layout
+
+\begin_layout Enumerate
+The possibility to have multiple instances of 
+\emph on
+AscSequenceControl
+\emph default
+ embedded in one 
+\emph on
+AscRouteSegmenter
+\emph default
+ contributes to the flexibility of the design.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+BACKGROUND: A common misunderstanding is that encapsulation is about hiding
+ attribute data by only accessing them via methods that store or retrieve
+ them.
+ But the main benefit of encapsulation is more general:
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\noun on
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+Encapsulation is about hiding
+\emph on
+ 
+\emph default
+design decisions
+\emph on
+ 
+\emph default
+rather than about data hiding.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Hiding a design decision means that changing this decision has only local
+ impact.
+ This contributes to the flexibility of the design, since the costs of change
+ are limited.
+ Changing an attribute indeed boils down to changing a design decision,
+ but so does changing a method.
+ So striving for thin interfaces is not only about hiding attributes but
+ also about hiding methods.
+ Hiding data may have extra benefits, apart from hiding design decissions.
+ That's what 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:thePropertyPattern"
+
+\end_inset
+
+ is about.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+The Property pattern
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:thePropertyPattern"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Example situation
+\end_layout
+
+\begin_layout Standard
+Suppose we have a 
+\emph on
+Circle 
+\emph default
+class which has the attributes 
+\emph on
+radius
+\emph default
+, 
+\emph on
+perimeter 
+\emph default
+and 
+\emph on
+area 
+\emph default
+in its interface.
+ It seems that the 'thin interfaces' principle would indicate that e.g.
+ only the 
+\emph on
+radius 
+\emph default
+should be present in the interface.
+ But since any real world circle also has a perimeter and an area, no generality
+ is sacrificed by adding them to the interface.
+ And by adding them, code that uses 
+\emph on
+Circle
+\emph default
+ could directly use 
+\emph on
+perimeter 
+\emph default
+and 
+\emph on
+area
+\emph default
+ in addition to 
+\emph on
+radius
+\emph default
+.
+ Storing them as separate attributes would unfortunately mean that they
+ have to be kept in sync explicitly.
+ As an alternative to having the attributes 
+\emph on
+perimeter
+\emph default
+ and 
+\emph on
+area
+\emph default
+, we could use methods 
+\emph on
+getPerimeter
+\emph default
+ and 
+\emph on
+getArea
+\emph default
+ to compute those values on the fly.
+ And we could also add methods 
+\emph on
+setPerimeter
+\emph default
+ and 
+\emph on
+setArea
+\emph default
+, to set the 
+\emph on
+radius 
+\emph default
+via them.
+ Doing so would would result in a 
+\emph on
+Circle
+\emph default
+ interface consisting of 
+\emph on
+radius
+\emph default
+, 
+\emph on
+getPerimeter
+\emph default
+,
+\emph on
+ setPerimeter
+\emph default
+,
+\emph on
+ getArea 
+\emph default
+and
+\emph on
+ setArea.
+
+\emph default
+ This unnecesarily exposes the design decision that the radius is actually
+ stored, while the perimeter and the area are computed on the fly.
+ Suppose that after a while, the area of the circle would turn out te be
+ used much more frequent than the radius.
+ Then it would become more attractive to store the area and compute the
+ radius and the perimeter from that.
+ This would lead to a changed interface of 
+\emph on
+Circle, 
+\emph default
+consisting of 
+\emph on
+getRadius
+\emph default
+, 
+\emph on
+setRadius
+\emph default
+, 
+\emph on
+getPerimeter
+\emph default
+, 
+\emph on
+setPerimeter 
+\emph default
+and 
+\emph on
+area
+\emph default
+, so all the code using 
+\emph on
+Circle
+\emph default
+ would have to be adapted.
+ We'd like to avoid that expensive overall changes like that.
+ How to proceed?
+\end_layout
+
+\begin_layout Subsection
+Solution principle
+\end_layout
+
+\begin_layout Standard
+One way to go, is to add a getter and setter to the attribute itself as
+ well, right from the start.
+ The interface of 
+\emph on
+Circle
+\emph default
+ would then become: 
+\emph on
+getRadius
+\emph default
+, 
+\emph on
+setRadius
+\emph default
+, 
+\emph on
+getPerimeter
+\emph default
+, 
+\emph on
+setPerimeter getArea
+\emph default
+, 
+\emph on
+setArea.
+ 
+\emph default
+The decision which value is actually stored and which other two are computed
+ from it is then hidden.
+ This means that we're free to switch from storing 
+\emph on
+_radius
+\emph default
+ to storing 
+\emph on
+_perimeter
+\emph default
+ or 
+\emph on
+_area 
+\emph default
+at any time.
+ Remember that prepending 
+\emph on
+_
+\emph default
+ to an attribute or method means that it does not belong to the interface.
+ That is important here, because if people started to directly access 
+\emph on
+_radius
+\emph default
+, storing 
+\emph on
+_area
+\emph default
+ instead would still break their code, requiring extra work.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+BACKGROUND: Some of the practical thinking behind Python is revealed by
+ the fact that refraining from direct use of private attributes or methods
+ (the ones that start with a single _) is left to free will.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+There may be very good reasons to directly use a private attribute or method
+ afterall, just like there may be very good reasons to break into your own
+ car if you locked in the keys.
+ Computer programs live in the real world, not in an ideal one.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+An attribute that is meant to be only accessed via a getter or a setter
+ is called a property.
+ Python supports properties in an elegant way.
+ Rather than having the bulky 
+\emph on
+getRadius
+\emph default
+, 
+\emph on
+setRadius
+\emph default
+, 
+\emph on
+getPerimeter
+\emph default
+, 
+\emph on
+setPerimeter, getArea
+\emph default
+, 
+\emph on
+setArea
+\emph default
+ interface, that requires the design decision to use a propery to be taken
+ up front, since all external code depends upon this interface, it allows
+ you to maintain the original 
+\emph on
+radius
+\emph default
+, 
+\emph on
+perimeter
+\emph default
+, 
+\emph on
+area
+\emph default
+ interface while still using properties.
+\end_layout
+
+\begin_layout Standard
+Without this facility, one might indeed be inclined to use getters and setters
+ for each attribute, just to be prepared for the unknown.
+ With it, one can start out with simple attributes and change them to properties
+ whenever needed, without impacting the rest of the design.
+ It is important to make a clear distinction here: Accessing attributes
+ via getters and setters is called the Property pattern.
+ The fact that Python has transparent way to do so is a bonus, but stricktly
+ spoken not part of the pattern.
+ Since you're learning Python here, we'll shamelessly benefit of that bonus
+ in the example code.
+\end_layout
+
+\begin_layout Subsection
+Example code
+\end_layout
+
+\begin_layout Standard
+In the first example, the only thing actually stored in an object of class
+ 
+\emph on
+Circle 
+\emph default
+is the private 
+\emph on
+_radius
+\emph default
+ attribute.
+ All access to this attribute, including access via the methods of 
+\emph on
+Circle
+\emph default
+ itself, is via the associated public 
+\emph on
+radius
+\emph default
+ property.
+ Note that the getters and setters start with an 
+\emph on
+_, 
+\emph default
+since they are never to be called directly by code outside the class.
+ The interface of 
+\emph on
+Circle
+\emph default
+ consists of the 
+\emph on
+radius
+\emph default
+, 
+\emph on
+perimeter 
+\emph default
+and
+\emph on
+ area 
+\emph default
+properties.
+ This interface hides the design decision on what is actually stored.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/patterns/propertyRadius.py"
+lstparams "caption={patterns/propertyRadius.py},label={lst:patterns/propertyRadius}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the second example, not the 
+\emph on
+_radius
+\emph default
+, but the 
+\emph on
+_area
+\emph default
+ is stored in a private attribute.
+ The interface of 
+\emph on
+Circle
+\emph default
+ still consists of the 
+\emph on
+radius
+\emph default
+, 
+\emph on
+perimeter 
+\emph default
+and
+\emph on
+ area 
+\emph default
+properties.
+ Since the interface did not change at all, all code using 
+\emph on
+Circle 
+\emph default
+doesn't have to change with respect to the previous example.
+ This is a direct benefit from 
+\emph on
+Circle
+\emph default
+ having a stable interface, that doesn't change when 
+\emph on
+_area
+\emph default
+ instead of 
+\emph on
+_radius
+\emph default
+ is stored.
+ 
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/patterns/propertyArea.py"
+lstparams "caption={patterns/propertyArea.py},label={lst:patterns/propertyArea}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+TIP: The fact that the member functions of 
+\emph on
+Circle 
+\emph default
+also use 
+\emph on
+radius
+\emph default
+, 
+\emph on
+perimeter 
+\emph default
+and
+\emph on
+ area
+\emph default
+, rather than calling getters and setters or accessing the private attribute
+ directly, further limits the impact of design changes.
+ One might argue that accessing the underlying attribute (
+\emph on
+_radius
+\emph default
+ or 
+\emph on
+_area
+\emph default
+) directly may result in faster code.
+ This type of so called 
+\begin_inset Quotes eld
+\end_inset
+
+peephole optimization
+\begin_inset Quotes erd
+\end_inset
+
+ should be avoided if possible, since it violates the DRY principle.
+ This makes design changes harder, including the optimizations that 
+\noun on
+really
+\noun default
+ matter.
+ As a general rule:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace defskip
+\end_inset
+
+
+\noun on
+
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+Don't start optimizing too early, first give priority to a clear and regular
+ design.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace defskip
+\end_inset
+
+This is not an invitation to be wasteful, but to avoid being 
+\begin_inset Quotes eld
+\end_inset
+
+penny wise and pound foolish
+\begin_inset Quotes erd
+\end_inset
+
+.
+ If you've defined a standard interface for a class, use it, also in the
+ class itself.
+ O, and yes indeed, there are exceptions to any rule, this one is no exception.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+*EXTRA* The Call Chaining pattern
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+TIP: While the call chaining pattern itself isn't too difficult, the example
+ given here is complicated.
+ It uses a lot of special Python facilities and some clever tricks.
+ Depending on your skills you may:
+\end_layout
+
+\begin_layout Enumerate
+Skip this pattern altogether.
+ Not much is lost if you do.
+\end_layout
+
+\begin_layout Enumerate
+Superficially skim through 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sub:Example-situation"
+
+\end_inset
+
+ , study the small code blocks in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sub:Solution-principle"
+
+\end_inset
+
+ thoroughly, but skip 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sub:Example-code"
+
+\end_inset
+
+ completely.
+\end_layout
+
+\begin_layout Enumerate
+Wrestle through 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sub:Example-code"
+
+\end_inset
+
+ as well.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Example situation
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Example-situation"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The first time I encountered the Call Chaining pattern was in IBM's Visual
+ Age library in 1980.
+ I started to use it myself every now and then.
+ Later on it became part of the Microsoft's LINQ.
+ LINQ makes it possible to select data from a collections of object in a
+ clever way, inspired by SQL.
+ SQL (pronunciation: sequel) or Structured Query Language is a special purpose
+ language to query and update data in a so called relational database, a
+ very popular way to store data into tables on disk.
+\end_layout
+
+\begin_layout Standard
+An example of a SQL statement is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SELECT name, address
+\end_layout
+
+\begin_layout Plain Layout
+
+FROM customers
+\end_layout
+
+\begin_layout Plain Layout
+
+WHERE profit > 10,000,000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Spent a few minutes reading bout SQL e.g.
+ in Wikipedia.
+ Don't dive to deeply, most of it will be intuitively clear.
+ While SQL is a language in its own right, often the need arises to have
+ SQL statements as part of e.g.
+ a Python program.
+ One way to do that is just to embed them as multi line strings (Google
+ for Python and 'multiline strings'):
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+query = '''
+\end_layout
+
+\begin_layout Plain Layout
+
+	SELECT name, address
+\end_layout
+
+\begin_layout Plain Layout
+
+	FROM customers
+\end_layout
+
+\begin_layout Plain Layout
+
+	WHERE profit > 10,000,000
+\end_layout
+
+\begin_layout Plain Layout
+
+'''
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+result = database.execute (query)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this code fragment 
+\emph on
+query 
+\emph default
+is a string variable containing a piece of SQL.
+ Python doesn't have any idea about the meaning of this piece of SQL, but
+ just passes the string as parameter to method 
+\emph on
+execute
+\emph default
+ of a Python object of class 
+\emph on
+database
+\emph default
+.
+ That object just forwards the contents of the SQL string to a special purpose
+ program called the RDBMS (Relational Database Management System).
+ The RDBMS queries the database and returns the selected data to the 
+\emph on
+execute
+\emph default
+ function that in turn returns it to 
+\emph on
+result
+\emph default
+.
+ This can be done, since the RDBMS can be controlled from C/C++ and Python
+ in turn can communicate with C/C++ code, a.o by using something called Cython.
+ The details are not relevant at this point and, on top of that, rather
+ boring.
+ An RDBMS that Python plays nice with is SQLite, but all the others will
+ do as well.
+\end_layout
+
+\begin_layout Standard
+Another way to use SQL from Python is to have special functions in Python
+ like 
+\emph on
+SELECT
+\emph default
+, 
+\emph on
+FROM
+\emph default
+ and 
+\emph on
+WHERE
+\emph default
+, to do the querying.
+ The nice thing about this approach is that these functions may be programmed
+ in such a way that they query Python lists rather than a real SQL database.
+ This example gives you an idea of how that might be done in principle.
+ The main thing you can learn from it, is that there's no mystery involved
+ in SQL, or anything else that has to do with computer programming for that
+ matter.
+ So, we are not going to connect to any RDBMS.
+ Rather we'll select data from Python lists.
+ But an interface to an RDBMS could be added.
+ This is exactly what Microsoft did with their LINQ tool.
+ As with LINQ, the language we'll use (or rather, make) is not SQL, but
+ something that looks a lot like it, allowing constructions like:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+result = (
+\end_layout
+
+\begin_layout Plain Layout
+
+	FROM (animals) .
+\end_layout
+
+\begin_layout Plain Layout
+
+	WHERE (lambda r: r.species == 'human' and r.age > 10) .
+\end_layout
+
+\begin_layout Plain Layout
+
+	SELECT (lambda r: (r.gender, r.name, r.age)) .
+\end_layout
+
+\begin_layout Plain Layout
+
+	ORDER_BY (lambda r: (r.name, r.age | DESC))
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here the SQL query is not a 'dead' string that doesn't mean anything to
+ Python, it is an alive and kicking chain of Python function calls, each
+ of the functions able to do something useful as part of the query.
+ The secret of this code is in the dots at the end of the lines.
+ It's these dots that give away the Call Chaining pattern.
+\end_layout
+
+\begin_layout Subsection
+Solution principle
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Solution-principle"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The solution principle of call chaining is that each call to a function
+ or method returns an object.
+ From this object in turn a method can be called, which returns another
+ object, of which a method can be called, and so on.
+ In the above piece of code the 
+\emph on
+FROM
+\emph default
+ function returns an object of class 
+\emph on
+Table
+\emph default
+.
+ Class 
+\emph on
+Table
+\emph default
+ has a method 
+\emph on
+WHERE
+\emph default
+, that returns second object, holding a selection of the first 
+\emph on
+Table
+\emph default
+ object.
+ This second object is also of class 
+\emph on
+Table
+\emph default
+.
+ Class 
+\emph on
+Table
+\emph default
+ also has a method 
+\emph on
+SELECT
+\emph default
+.
+ This method again returns a 
+\emph on
+Table
+\emph default
+ instance.
+ Class 
+\emph on
+Table
+\emph default
+ also has a method 
+\emph on
+ORDER_BY
+\emph default
+, which is called in the end, returning a string with a sorted version of
+ the contents of the 
+\emph on
+Table
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+The dots were crucial because they provide the glue between the lines of
+ SQL like code.
+ If 
+\emph on
+FROM (animals)
+\emph default
+ returns an object, then F
+\emph on
+ROM (animals) .WHERE (...)
+\emph default
+ is just a method call upon that object.
+ It is the normal dot notation for calling methods that we've used everywhere.
+ So the essence of the pattern is that rather than writing:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+object1 = functionA ()
+\end_layout
+
+\begin_layout Plain Layout
+
+object2 = object1.methodB ()
+\end_layout
+
+\begin_layout Plain Layout
+
+object3 = object2.methodC ()
+\end_layout
+
+\begin_layout Plain Layout
+
+object4 = object3.methodD ()
+\end_layout
+
+\begin_layout Plain Layout
+
+result = object4.methodE ()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+one writes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+result = (
+\end_layout
+
+\begin_layout Plain Layout
+
+	functionA () .
+\end_layout
+
+\begin_layout Plain Layout
+
+	methodA () .
+\end_layout
+
+\begin_layout Plain Layout
+
+	methodB () .
+\end_layout
+
+\begin_layout Plain Layout
+
+	methodC () .
+\end_layout
+
+\begin_layout Plain Layout
+
+	methodD ()
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Each method call relies upon the result of the previous call.
+ It is as if the object returned by functionA is handed through a sequence
+ of transformation functions.
+ With database querying each transformation acts as a filter narrowing down
+ the query.
+ But call chaining like this can also be used to e.g.
+ transform graphical objects:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+render (
+\end_layout
+
+\begin_layout Plain Layout
+
+	getCube () .
+\end_layout
+
+\begin_layout Plain Layout
+
+	stretchX (3) .
+\end_layout
+
+\begin_layout Plain Layout
+
+	stretchY (4) .
+\end_layout
+
+\begin_layout Plain Layout
+
+	rotateX (math.pi / 2) .
+\end_layout
+
+\begin_layout Plain Layout
+
+	material (shiny) .
+\end_layout
+
+\begin_layout Plain Layout
+
+	light (green)
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The final stretched, rotated , illuminated object is returned to the 
+\emph on
+render
+\emph default
+ function, that puts it on the screen.
+\end_layout
+
+\begin_layout Subsection
+Example code
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Example-code"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The example code uses a small selection of the many under-the-hood features
+ that make Python such a power tool.
+ They will be explained in a second, heavily commented, version of the source
+ code.
+ But first traverse the bare code criss-cross with a machete and see what
+ you pick up from it without any explanation.
+ Maybe the end is the best place to start, since that's where everything
+ comes together.
+ Don't strive for complete understanding, just get some intuitive sense
+ of what this code roughly does.
+ If some fragments are too hard, skip them.
+ If this leads you to skipping everything, that's completely OK.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/patterns/callChaining.py"
+lstparams "caption={patterns/callChaining.py},label={lst:patterns/callChaining}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next thing to look at is an abundantly commented version of the same code.
+ Using comments like this is called Literate Programming.
+ Give it another go, carefully reading the comments.
+ Be prepared to do some detective work.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "prog/patterns/callChainingLiterate.py"
+lstparams "caption={patterns/callChainingLiterate.py},label={lst:patterns/callChainingLiterate}"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+--//--
+\end_layout
+
+\end_body
+\end_document

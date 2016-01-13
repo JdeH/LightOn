@@ -1,0 +1,6 @@
+*.pyc
+*.npp
+*.db
+**.__pycache__
+dist
+LightOn.egg-info
