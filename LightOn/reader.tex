@@ -325,14 +325,13 @@ may be a standard solution.
 
 In this text, the convention of starting private members with a \_
 is not stricktly adhered to, as it is a Python-only habit. As such
-it is less practical if Python is combined with C++, which is often
-the case for the technical and scientific applications that I work
-on. Also at the beginning of a project it is often not completely
+it is once again less practical if Python is combined with C++.
+Also at the beginning of a project it is often not completely
 clear what belongs to the interface an what not. You should give yourselve
 some leeway here. But when you cooperate with multiple developers
 on a Python-only project, using the \_ convention may come in handy
 to make clear to your colleagues what the interface of a class is,
-from the source code alone .
+from the source code alone.
 
 \shadowbox{\begin{minipage}[t]{1\columnwidth}%
 TIP: Make your source code self-explanatory. No other documents should
@@ -397,7 +396,7 @@ know they all can \emph{walk}. This careless way of handling different
 types of objects is called duck typing. If it walks like a duck, swims
 like a duck, sounds like a duck, let's treat it like a duck. A collection,
 e.g. a list, containing types of various classes is called a polymorphic
-object collection. Polymorphic means: of varying shape.
+object collection.
 
 Objects, encapsulation, standard interfaces and polymorphism are important
 ingredients in the way of programming that was briefly mentioned in
@@ -500,10 +499,9 @@ is:
 
 \lstinputlisting[caption={prog/func\_square.py},label={lst:func_square}]{prog/func_square.py}
 
-The non-functional way requires more code than the functional way.
-Still the beginning you may prefer the non-functional way, since it
-shows what's happening step by step. But that will probably shift,
-once you gain experience.
+The functional way requires slightly less code than the non-functional way, but that's just a bonus.
+In the beginning you may prefer the non-functional way, since its explicit steps make it easier to debug.
+But that will probably shift once you gain experience, since the conciseness of the functional way helps preventing bugs in the first place.
 
 \lstinputlisting[caption={prog/nonfunc\_square.py},label={lst:nonfunc_square}]{prog/nonfunc_square.py}
 
@@ -771,7 +769,7 @@ the Pyglet game engine library downloaded from Pypi.
 In step 1, take stock of the domain classes to obtain the following
 valid Python program:
 
-\lstinputlisting[caption={pong/pong1py},label={lst:pong/pong1}]{prog/pong/pong1.py}
+\lstinputlisting[caption={pong/pong1.py},label={lst:pong/pong1}]{prog/pong/pong1.py}
 
 As the second part of step 1, inventorize the relations between objects
 or classes:
@@ -790,7 +788,7 @@ that is a reference to the scoreboard of the game.
 \end{itemize}
 Formulate these relations in Python, to obtain the following code:
 
-\lstinputlisting[caption={pong/pong2},label={lst:pong/pong2}]{prog/pong/pong2.py}
+\lstinputlisting[caption={pong/pong2.py},label={lst:pong/pong2}]{prog/pong/pong2.py}
 
 Take your time to study \lstref{pong/pong2}. Make sure you understand
 each and every line of it before proceeding. Run it to make sure it
@@ -828,7 +826,7 @@ sport are called its attributes in everyday language. The term 'sprite'
 on the other hand, is a programming term. A sprite a small moving
 object on the screen. 
 
-\lstinputlisting[caption={pong/pong3},label={lst:pong/pong3}]{prog/pong/pong3.py}
+\lstinputlisting[caption={pong/pong3.py},label={lst:pong/pong3}]{prog/pong/pong3.py}
 
 While this program starts to really look like something, still it
 doesn't do anything. To make it work we'll use facilities from the
@@ -879,7 +877,7 @@ cycle, it must be possible to \emph{reset} the game attributes: paddles
 and ball in start position, score 0 - 0. All of this is incorporated
 in the next version of pong:
 
-\lstinputlisting[caption={pong/pong4},label={lst:pong/pong4}]{prog/pong/pong4.py}
+\lstinputlisting[caption={pong/pong4.py},label={lst:pong/pong4}]{prog/pong/pong4.py}
 
 The methods \emph{reset}, \emph{interact}, \emph{cycle} and \emph{commit
 }constitute the interface inherited by all subclasses of class \emph{Attribute}.
@@ -888,6 +886,13 @@ can be called in a uniform way by looping over the \emph{attributes}
 list of the \emph{Game} instance, as can be seen in line 53 - 64 of
 \lstref{pong/pong4}. Completing step 2, we have now set up the complete
 program structure without any reference to the Pyglet library.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=7cm]{imag/prog/pong/pong4}
+\end{center}
+\caption{Class diagram of pong4.py, showing inheritance}
+\end{figure}
 
 \section{Step 3, programming: Working out program logic and laying the connection
 with Pyglet}
