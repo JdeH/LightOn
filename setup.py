@@ -8,7 +8,7 @@ def read (*paths):
 
 setup (
 	name = 'LightOn',
-	version = '0.0.18',
+	version = '0.0.19',
 	description = 'LightOn - A lightweight Python course taking beginners seriously',
 	long_description = (
 		read ('README.rst') + '\n\n' +
